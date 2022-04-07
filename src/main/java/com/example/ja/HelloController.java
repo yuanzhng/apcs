@@ -35,8 +35,8 @@ public class HelloController {
         }
 
         int num1 = Integer.parseInt(txtnum1.getText());
-        int num2 = Integer.(txtnum2.getText());
-        int answer;
+        int num2 = Integer.parseInt(txtnum2.getText());
+        int answer = 0;
         String symbol = null;
 
         if (e.getSource() == btnadd) {
@@ -53,7 +53,9 @@ public class HelloController {
         }
         else if (e.getSource() == btndiv) {
             symbol = "/";
-            answer = num1 / num2;
+            if (num2 != 0) {
+                answer = num1 / num2;
+            }
         }
 
         lblans.setText("" + num1 + " " + symbol + " " + num2 + " " + "=" + " " + answer);
